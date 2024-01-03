@@ -72,7 +72,7 @@ TYPE   ::       Rock - Paper - Scissors    :: as your input
         break
 
 print(f"User total score : {user_score}\nComputer total score : {comp_score}")
-print("\n\n****Thank you for playing this game****")
+print("\n\n ****Thank you for playing this game ****")
 
 
 
