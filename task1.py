@@ -5,43 +5,66 @@ and organize their tasks efficiently. This project aims to create a
 command-line or GUI-based application using Python, allowing
 users to create, update, and track their to-do lists
 """
-#underprocess............
-def todo_list():
-    while True:
-        list = []
-        print(""" What do you want to do 
-            create    - for creating a todo list
-            update    - for updating your todo list
-            delete    - for deleting the todo list
-            """)
-        answer = input()
-        if answer.lower() == 'create':
-            print ("How many task you want to enter")
-            answer = int(input())
-            for i in range(answer):
-                line = input('>')
-                list.append(line+"\n")
-            print("Your todo list is successfully created")
 
-        elif answer.lower() == 'update':
-            line = input('>')
-            list.append(line+"\n")
-            print("Your todo list is successfully created")
 
-        elif answer.lower() == 'track':
-            for i in list:
-                print(i)
+list = []
+num =0
+def display():
+    for i in list:
+        print(i)
 
+def insert():
+    global num
+    print ("How many task you want to enter")
+    answer = int(input())
+    for answer in range(answer):
+        line = input('>')
+        num+=1
+        list.append(f"{num}. {line} ")
+
+
+while True:
+        
+    print(""" What do you want to do 
+        create    - for creating a todo list
+        update    - for updating your todo list
+        display   - for track/display the todo list
+        """)
+    answer = input()
+
+    #Creating list..
+    if answer.lower() == 'create':
+        insert()
+        print("List is successfully created")
+
+
+    #updation of list...
+    elif answer.lower() == 'update':
+        print("This is the list ")
+        display()
+        print("What do you want to do insertion/deletion ??")
+        if input().lower().startswith('i'):
+            insert()
+            
         else:
-            print("Please enter the right input")
+            print("inter the list no to delete")
+            index =int(input())
+            list.pop(index-1)
+        
+        print("List is successfully updated")
 
-        print("Do you want to continue....")
-        if not input().lower().startswith('y'):
-            break
+        
+
+    elif answer.lower() == 'display':
+        display()
+
+    else:
+        print("Please enter the right input")
+
+    print("Do you want to continue....")
+    if not input().lower().startswith('y'):
+        break
     
-
-todo_list()
-
-
+print("Bye BYe .....")
     
 

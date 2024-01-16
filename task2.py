@@ -36,7 +36,10 @@ def calculator():
             case 'x'|'*':
                 result = (num1*num2)
             case '/':
-                result = (num1/num2)
+                try:
+                  result = (num1/num2)
+                except Exception as e:
+                    print(e)
             case none:
                 print("Invalid input! please enter a valid operator")
 

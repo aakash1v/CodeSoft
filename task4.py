@@ -22,7 +22,7 @@ comp_score =0
 while True:
     print('''
 --------- This is Rock Paper Scissor-game  ----------------
-TYPE   ::       Rock - Paper - Scissors    :: as your input         
+TYPE   ::       Rock - Paper - Scissors    :: only:)         
         ''')
     comp = random.choice(list)
     # Taking input from user 
